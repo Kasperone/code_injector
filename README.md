@@ -1,4 +1,4 @@
-# HTML Injector
+# Code Injector
 
 This Python script demonstrates HTML injection by intercepting HTTP requests and responses using a Netfilter queue and modifying the content of HTTP responses to include custom scripts. This is useful for educational purposes to understand how attackers manipulate HTTP traffic to inject malicious code.
 
@@ -20,8 +20,8 @@ This Python script demonstrates HTML injection by intercepting HTTP requests and
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/html_injector.git
-cd html_injector
+git clone https://github.com/Kasperone/code_injector.git
+cd code_injector
 ```
 
 Install the required libraries:
